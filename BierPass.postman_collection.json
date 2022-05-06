@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "10ac0ec8-cf48-4bfd-aa4b-d62b2bb172e2",
+		"name": "BierPass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "c496d549-82e7-4a61-9b6e-d0250518c78c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{project-url}}/user",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"crwlos.rocha@gmail.com\",\n    \"streetName\": \"Rua General Osório\",\n    \"phone\": \"47 99634391\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{project-url}}/user/3937540e-1c18-480f-abef-96aae395e40f",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"user",
+								"3937540e-1c18-480f-abef-96aae395e40f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"federalTaxId\": \"75959098644\",\n    \"email\": \"crwlos.rocha@gmail.com\",\n    \"firstName\": \"Eloá\",\n    \"lastName\": \"Letícia Mirella da Luz\",\n    \"phone\": \"81 26490901\",\n    \"streetName\": \"Rua Benjamin Constant\",\n    \"streetNumber\": \"1354\",\n    \"neighborhood\": \"Escola Agricola\",\n    \"postalCode\": \"89041001\",\n    \"hasAdmin\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{project-url}}/user",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{project-url}}/product",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Cervejinha geladaa\",\n    \"price\": 7.99,\n    \"minQuantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{project-url}}/product",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 6.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{project-url}}/product/24f88952-911a-4061-bb75-bc7728ef6de8",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"product",
+								"24f88952-911a-4061-bb75-bc7728ef6de8"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "0705fc42-2b00-4287-b0ef-611eb4b198b2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{project-url}}/product/24f88952-911a-4061-bb75-bc7728ef6de8",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"product",
+								"24f88952-911a-4061-bb75-bc7728ef6de8"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{project-url}}/order",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"id\": \"75d4e43a-b636-429a-93d1-22798942ea51\",\n            \"quantity\": 3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{project-url}}/order",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{project-url}}/order/9b97b6cd-88d0-47dd-aab5-483d9fecff44",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"order",
+								"9b97b6cd-88d0-47dd-aab5-483d9fecff44"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "0705fc42-2b00-4287-b0ef-611eb4b198b2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{userId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"id\": \"fe23be42-b365-45b3-9cdf-f85c7209770d \",\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{project-url}}/order/fafbafd4-97b8-4c56-9396-17fc6649f40f",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"order",
+								"fafbafd4-97b8-4c56-9396-17fc6649f40f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"id\": \"1247923778\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{project-url}}/notification/payment/mercadopago",
+							"host": [
+								"{{project-url}}"
+							],
+							"path": [
+								"notification",
+								"payment",
+								"mercadopago"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{project-url}}",
+					"host": [
+						"{{project-url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
